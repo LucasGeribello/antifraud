@@ -8,7 +8,7 @@ app = FastAPI()
 class Transaction(BaseModel):
     transaction_id: int
     user_id: int
-    timestamp: str
+    transaction_date: str
     amount: float
     location: str
     device: str
