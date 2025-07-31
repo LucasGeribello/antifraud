@@ -10,11 +10,11 @@ def evaluate_transaction(tx) -> Literal["approve", "deny"]:
     if tx.amount > 10000:
         flags.append("high_amount")
 
-    tx_time = datetime.fromisoformat(tx.timestamp)
+    tx_time = datetime.fromisoformat(tx.transaction_date)
     prev = user_last_transaction[tx.user_id]
 
     if prev:
-        time_diff = (tx_time - prev['timestamp']).total_seconds()
+        time_diff = (tx_time - prev['transaction_date']).total_seconds()
         if time_diff < 30:
             flags.append("rapid_transactions")
         if tx.location != prev['location']:
@@ -23,7 +23,7 @@ def evaluate_transaction(tx) -> Literal["approve", "deny"]:
             flags.append("device_change")
 
     user_last_transaction[tx.user_id] = {
-        'timestamp': tx_time,
+        'transaction_date': tx_time,
         'location': tx.location,
         'device': tx.device
     }
