@@ -80,8 +80,13 @@ To improve fraud detection, you could collect and analyze:
 Data Type ----------------------------------------------- Why It's Useful
 				
 Device Geolocation ----------------- Compare with shipping address and IP location
+
 IP Address --------------------- Identify multiple accounts using the same IP
+
 Chargeback History per User/Card ----------- Spot repeat offenders
+
 Time Between Transactions -------------- High frequency in a short period can indicate bot activity or fraud
+
 Sign-up vs. Transaction Time ----------- Quick registration and purchase may indicate a scam
+
 Merchant vs. Chargeback Rate ----------- See if specific merchants are unusually risky
